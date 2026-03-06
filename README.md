@@ -2,13 +2,17 @@
 
 ## Overview
 
-Build a multi-agent system that solves [Rush Hour](https://en.wikipedia.org/wiki/Rush_Hour_(puzzle)) puzzles.
+Your goal is to build an agentic system in **Python** using **LangGraph** that solves [Rush Hour](https://en.wikipedia.org/wiki/Rush_Hour_(puzzle)) sliding puzzles.
 
-Rush Hour is a sliding puzzle played on a 6×6 grid. Vehicles (cars of length 2 or trucks of length 3) can only slide along their orientation axis (horizontal vehicles move left/right, vertical vehicles move up/down). The goal is to move the **target car (X)** to the right edge of the board (row 2, column 5).
+The system should use one or more LLM-powered agents that interact with the game environment and solve the puzzles.
+
+### The Game
+
+Rush Hour is played on a 6×6 grid. Vehicles (cars of length 2 or trucks of length 3) can only slide along their orientation axis (horizontal vehicles move left/right, vertical vehicles move up/down). The goal is to move the **target car (X)** to the right edge of the board (row 2, column 5).
 
 ## Game API
 
-The game environment is a plain Python class — no framework dependencies. You decide how to wrap it (LangGraph tools, function calls, MCP, etc.).
+The game environment is a plain Python class.
 
 ```python
 from rush_hour import RushHourGame, list_puzzles
