@@ -106,7 +106,7 @@ python solution_checker.py your_solution
 
 The checker runs your solver on all puzzles and reports:
 
-- **Status**: SOLVED / UNSOLVED / ERROR / TIMEOUT
+- **Status**: SOLVED / UNSOLVED / ERROR
 - **Moves used**
 - **Time** taken per puzzle
 

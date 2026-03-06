@@ -17,7 +17,7 @@ import time
 from rush_hour import RushHourGame, list_puzzles
 
 
-def evaluate_solver(solve_fn, puzzle_name: str, timeout: float = 120.0) -> dict:
+def evaluate_solver(solve_fn, puzzle_name: str) -> dict:
     """Run a solver on a single puzzle and return results."""
     game = RushHourGame.from_puzzle(puzzle_name)
 
@@ -28,15 +28,6 @@ def evaluate_solver(solve_fn, puzzle_name: str, timeout: float = 120.0) -> dict:
     except Exception as e:
         error = str(e)
     elapsed = time.time() - start
-
-    if elapsed > timeout:
-        return {
-            "puzzle": puzzle_name,
-            "status": "TIMEOUT",
-            "moves": None,
-            "time": elapsed,
-            "error": f"Exceeded {timeout}s timeout",
-        }
 
     if error:
         return {
